@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通晓宇宙</title>
+</head>
+
+<body>
+    <!-- 定义一系列文本框 id name tel qq vx mail adr edu note -->
+    <table>
+        <tr>
+            <td>身份证</td>
+            <td><input type="text" name="id" id="id" value="{{idx}}"></td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td><input type="text" name="name" id="name" value="{{namex}}"></td>
+        </tr>
+        <tr>
+            <td>电话</td>
+            <td><input type="text" name="tel" id="tel" value="{{telx}}"></td>
+        </tr>
+        <tr>
+            <td>QQ</td>
+            <td><input type="text" name="qq" id="qq" value="{{qqx}}"></td>
+        </tr>
+        <tr>
+            <td>微信</td>
+            <td><input type="text" name="vx" id="vx" value="{{vxx}}"></td>
+        </tr>
+        <tr>
+            <td>邮箱</td>
+            <td><input type="text" name="mail" id="mail" value="{{mailx}}"></td>
+        </tr>
+        <tr>
+            <td>地址</td>
+            <td><input type="text" name="adr" id="adr" value="{{adrx}}"></td>
+        </tr>
+        <tr>
+            <td>教育</td>
+            <td><input type="text" name="edu" id="edu" value="{{edux}}"></td>
+        </tr>
+        <tr>
+            <td>备注</td>
+            <td><input type="text" name="note" id="note" value="{{notex}}"></td>
+        </tr>
+
+    </table>
+    <!-- 定义一系列按钮 insert delete update select -->
+    <button id="index" onclick="index()">主页</button>
+    <button id="insert" onclick="insert()">插入</button>
+    <button id="delete" onclick="delete_()">删除</button>
+    <button id="update" onclick="update()">更新</button>
+    <button id="select" onclick="select()">查询</button>
+    <button id="reset" onclick="reset()">重置</button>
+
+    <!-- 使用css美化文本框和按钮 -->
+    <style>
+        table {
+            border-collapse: collapse;
+            /* border: 1px solid #000; */
+        }
+
+        td {
+            /* border: 1px solid #000; */
+            padding: 5px;
+        }
+
+        /* 增大表格行间距 */
+        /* tr {
+            height: 30px;
+        } */
+        
+
+        /* input宽一点 */
+        input {
+            width: 500px;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <script lang="text/javascript">
+
+        function index() {
+            window.location.href = "/";
+        }
+        function select() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var tel = document.getElementById("tel").value;
+            var qq = document.getElementById("qq").value;
+            var vx = document.getElementById("vx").value;
+            var mail = document.getElementById("mail").value;
+            var adr = document.getElementById("adr").value;
+            var edu = document.getElementById("edu").value;
+            var note = document.getElementById("note").value;
+            window.location.href = "/select?id=" + id + "&name=" + name + "&tel=" + tel + "&qq=" + qq + "&vx=" + vx + "&mail=" + mail + "&adr=" + adr + "&edu=" + edu + "&note=" + note;
+        }
+
+        function insert() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var tel = document.getElementById("tel").value;
+            var qq = document.getElementById("qq").value;
+            var vx = document.getElementById("vx").value;
+            var mail = document.getElementById("mail").value;
+            var adr = document.getElementById("adr").value;
+            var edu = document.getElementById("edu").value;
+            var note = document.getElementById("note").value;
+            window.location.href = "/insert?id=" + id + "&name=" + name + "&tel=" + tel + "&qq=" + qq + "&vx=" + vx + "&mail=" + mail + "&adr=" + adr + "&edu=" + edu + "&note=" + note;
+        }
+
+        function delete_() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var tel = document.getElementById("tel").value;
+            var qq = document.getElementById("qq").value;
+            var vx = document.getElementById("vx").value;
+            var mail = document.getElementById("mail").value;
+            var adr = document.getElementById("adr").value;
+            var edu = document.getElementById("edu").value;
+            var note = document.getElementById("note").value;
+            window.location.href = "/delete?id=" + id + "&name=" + name + "&tel=" + tel + "&qq=" + qq + "&vx=" + vx + "&mail=" + mail + "&adr=" + adr + "&edu=" + edu + "&note=" + note;
+        }
+
+        function update() {
+            var id = document.getElementById("id").value;
+            var name = document.getElementById("name").value;
+            var tel = document.getElementById("tel").value;
+            var qq = document.getElementById("qq").value;
+            var vx = document.getElementById("vx").value;
+            var mail = document.getElementById("mail").value;
+            var adr = document.getElementById("adr").value;
+            var edu = document.getElementById("edu").value;
+            var note = document.getElementById("note").value;
+            window.location.href = "/update?id=" + id + "&name=" + name + "&tel=" + tel + "&qq=" + qq + "&vx=" + vx + "&mail=" + mail + "&adr=" + adr + "&edu=" + edu + "&note=" + note;
+        }
+
+        function reset() {
+            document.getElementById("id").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("tel").value = "";
+            document.getElementById("qq").value = "";
+            document.getElementById("vx").value = "";
+            document.getElementById("mail").value = "";
+            document.getElementById("adr").value = "";
+            document.getElementById("edu").value = "";
+            document.getElementById("note").value = "";
+        }
+
+    </script>
+
+
+</body>
+
+</html>
